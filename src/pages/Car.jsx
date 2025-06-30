@@ -21,10 +21,10 @@ const Car = () => {
   }
 
   const handleUpdate = (updatedComment) => {
-  setComments((prev) =>
-    prev.map((c) => (c.id === updatedComment.id ? updatedComment : c))
-  );
-};
+    setComments((prev) =>
+      prev.map((comment) => (comment.id === updatedComment.id ? updatedComment : comment))
+    );
+  };
 
   return (
     <div>
