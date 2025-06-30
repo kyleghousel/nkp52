@@ -42,3 +42,7 @@ code {
     transform: rotate(360deg);
   }
 }
+
+.soundCard {
+  cursor: pointer;
+}

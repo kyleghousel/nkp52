@@ -14,7 +14,10 @@ const Soundboard = () => {
   return (
     <div>
       <Header />
-      <SoundList sounds={sounds} />
+      <div className="container mt-4">
+        <h2 className="text-center mb-4">Nihar Soundboard</h2>
+        <SoundList sounds={sounds} />
+      </div>
     </div>
   )
 }
