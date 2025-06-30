@@ -4,43 +4,51 @@
       "id": 1,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3"
+      "audio": "/sounds/EmotionalDamage.mp3",
+      "clicks": 0
     },
-        {
+    {
       "id": 2,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
       "audio": "/sounds/EmotionalDamage.mp3"
     },
-        {
+    {
       "id": 3,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
       "audio": "/sounds/EmotionalDamage.mp3"
     },
-        {
+    {
       "id": 4,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
       "audio": "/sounds/EmotionalDamage.mp3"
     },
-        {
+    {
       "id": 5,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
       "audio": "/sounds/EmotionalDamage.mp3"
     },
-        {
+    {
       "id": 6,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
       "audio": "/sounds/EmotionalDamage.mp3"
     },
-        {
+    {
       "id": 7,
       "name": "Emotional Damage",
       "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
       "audio": "/sounds/EmotionalDamage.mp3"
+    }
+  ],
+  "comments": [
+    {
+      "id": "46e9",
+      "comment": "Yoooo Nihar that car is dope dude!",
+      "user": "Kyle"
     }
   ]
 }

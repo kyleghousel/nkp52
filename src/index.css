@@ -22,7 +22,15 @@ code {
 #navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 25%;
+  position: relative;
+}
+
+.middle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #nihead {
@@ -44,5 +52,31 @@ code {
 }
 
 .soundCard {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#car-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#car-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comment-list {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
