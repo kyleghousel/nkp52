@@ -1,0 +1,10 @@
+{
+  "sounds": [
+    {
+      "id": 1,
+      "name": "Emotional Damage",
+      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
+      "audio": "/sounds/EmotionalDamage.mp3"
+    }
+  ]
+}
