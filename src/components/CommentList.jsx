@@ -1,11 +1,12 @@
 import React from 'react'
 import Comment from './Comment'
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments, onDelete, onUpdate }) => {
 
   const renderComments = comments.map((comment) => (
-    <Comment key={comment.id} comment={comment} />
+    <Comment key={comment.id} comment={comment} onDelete={onDelete} onUpdate={onUpdate} />
   ))
+
   return (
     <div id='comment-list'>
       <h2>Hype For Nihar's Car</h2>

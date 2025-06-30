@@ -16,6 +16,16 @@ const Car = () => {
     setComments([...comments, newComment])
   }
 
+  const handleDeleteComment = (newCommentId) => {
+    setComments(comments.filter(comment => comment.id !== newCommentId))
+  }
+
+  const handleUpdate = (updatedComment) => {
+  setComments((prev) =>
+    prev.map((c) => (c.id === updatedComment.id ? updatedComment : c))
+  );
+};
+
   return (
     <div>
       <Header />
@@ -23,7 +33,7 @@ const Car = () => {
         <div id='car-container'>
           <img src='./imgs/NiCar.png' alt='vroom' />
         </div>
-        <CommentList comments={comments} />
+        <CommentList comments={comments} onDelete={handleDeleteComment} onUpdate={handleUpdate} />
       </main>
       <AddCommentForm onNewComment={handleAddComment} />
     </div>
