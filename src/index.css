@@ -25,6 +25,7 @@ code {
   align-items: center;
   width: 25%;
   position: relative;
+  z-index: 999;
 }
 
 .middle {
@@ -36,7 +37,7 @@ code {
 .nav-link {
   text-decoration: none;
   color: black;
-  padding: 0.5rem 1rem;
+  padding: 3.5rem 3rem;
   border-radius: 5px;
   transition: background-color 0.2s ease;
   display: inline-block;
@@ -57,6 +58,8 @@ code {
   display: block;
   margin: 0 auto;
   transform-origin: center center;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes spin {
@@ -67,6 +70,11 @@ code {
   to {
     transform: rotate(360deg);
   }
+}
+
+#sort-select {
+  width: 25%;
+  margin: 0 auto;
 }
 
 .soundCard img {

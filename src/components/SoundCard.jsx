@@ -4,11 +4,13 @@ const SoundCard = ({ onUpdate, sound }) => {
 
   const { audio, clicks, id, name, image } = sound
 
-  const playSound =  () => {
+  const playSound = () => {
     const soundPath = `${process.env.PUBLIC_URL}${audio}`;
     const audioPlayer = new Audio(soundPath);
     audioPlayer.play();
+  }
 
+  const updateClicks = () => {
     fetch('http://localhost:3001/sounds/'+id, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -22,8 +24,13 @@ const SoundCard = ({ onUpdate, sound }) => {
         .catch((err) => console.error(err));
   }
 
+  const handleClick =  () => {
+    playSound()
+    updateClicks()
+  }
+
   return (
-    <div id={id} className="card h-100 soundCard" onClick={playSound}>
+    <div id={id} className="card h-100 soundCard" onClick={handleClick}>
       <img src={image} alt={name} />
       <h4 className="card-body text-center">{name}</h4>
     </div>

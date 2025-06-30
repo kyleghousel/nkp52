@@ -8,7 +8,7 @@ const CommentList = ({ comments, onDelete, onUpdate }) => {
   ))
 
   return (
-    <div id='comment-list'>
+    <div id='comment-list container mt-4'>
       <h2>Hype For Nihar's Car</h2>
       {renderComments}
     </div>

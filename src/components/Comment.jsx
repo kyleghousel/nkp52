@@ -47,21 +47,30 @@ const Comment = ({ comment, onDelete, onUpdate }) => {
   };
 
   return (
-    <div>
-      {isEditing ? (
-        <input
-          value={editedComment}
-          onChange={(e) => setEditedComment(e.target.value)}
-          onBlur={finishEditing}
-          onKeyDown={handleKeyDown}
-          autoFocus
-        />
-      ) : (
-        <h5>{comment.comment}</h5>
-      )}
-      <p>{comment.user}</p>
-      <button onClick={handleEdit}>✏️</button>
-      <button onClick={handleDelete}>❌</button>
+    <div className="card mb-3 shadow-sm">
+      <div className="card-body d-flex flex-column">
+        {isEditing ? (
+          <input
+            value={editedComment}
+            className="form-control mb-2"
+            onChange={(e) => setEditedComment(e.target.value)}
+            onBlur={finishEditing}
+            onKeyDown={handleKeyDown}
+            autoFocus
+          />
+        ) : (
+          <p className="card-text mb-1">{comment.comment}</p>
+        )}
+        <small className="text-muted">— {comment.user}</small>
+        <div className="mt-2">
+          <button className="btn btn-sm btn-outline-primary me-2" onClick={handleEdit}>
+            <i className="bi bi-pencil-square"></i>
+          </button>
+          <button className="btn btn-sm btn-outline-danger"  onClick={handleDelete}>
+            <i className="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
