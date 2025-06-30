@@ -1,9 +1,13 @@
 import React from 'react'
 
-const SoundCard = () => {
-  return (
-    <div>
+const SoundCard = ({ sound }) => {
 
+  const { audio, id, name, image } = sound
+
+  return (
+    <div id={id}>
+      <img src={image} alt={name} />
+      <h4>{name}</h4>
     </div>
   )
 }

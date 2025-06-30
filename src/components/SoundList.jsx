@@ -1,10 +1,15 @@
 import React from 'react'
 import SoundCard from './SoundCard'
 
-const SoundList = () => {
+const SoundList = ({ sounds }) => {
+
+  const renderSounds = sounds.map((sound) => (
+    <SoundCard key={sound.id} sound={sound} />
+  ))
+
   return (
     <div>
-      <SoundCard />
+      {renderSounds}
     </div>
   )
 }
