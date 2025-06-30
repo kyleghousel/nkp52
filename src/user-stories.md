@@ -48,5 +48,5 @@ Details: Use a public car-related API (or a mock response if needed). Fetch base
 
 ### Make Car Page interactive with Nihar's car data
 
-User story: As a user, I want to interact with Nihar’s car info in a fun way (like toggling spoilers or facts).
+User story: As a user, I want to interact with Nihar’s car info in a fun way (like toggling fun facts).
 Details: Add buttons to toggle specs, a quiz, or even an animated "rev engine" interaction with sound and CSS.
