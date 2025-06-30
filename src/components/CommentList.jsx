@@ -4,7 +4,7 @@ import Comment from './Comment'
 const CommentList = ({ comments }) => {
 
   const renderComments = comments.map((comment) => (
-    <Comment comment={comment} />
+    <Comment key={comment.id} comment={comment} />
   ))
   return (
     <div id='comment-list'>

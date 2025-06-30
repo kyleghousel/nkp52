@@ -32,8 +32,8 @@ const AddCommentForm = ({ onNewComment }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type='text' name='comment' value={formData.comment} onChange={handleChange} />
-      <input type='text' name='user' value={formData.user} onChange={handleChange} />
+      <input type='text' name='comment' placeholder='Type your comment...' value={formData.comment} onChange={handleChange} />
+      <input type='text' name='user' placeholder='Type your name...' value={formData.user} onChange={handleChange} />
       <button type='submit'>Add Comment</button>
     </form>
   )

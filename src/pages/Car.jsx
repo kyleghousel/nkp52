@@ -25,7 +25,7 @@ const Car = () => {
         </div>
         <CommentList comments={comments} />
       </main>
-      <AddCommentForm onNewComment={handleAddComment}/>
+      <AddCommentForm onNewComment={handleAddComment} />
     </div>
   )
 }
