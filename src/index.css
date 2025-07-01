@@ -245,6 +245,6 @@ code {
 }
 
 .zoom-in {
-  animation: slowZoom 120s ease-in-out forwards;
+  animation: slowZoom 90s ease-in-out forwards;
   transform-origin: center center;
 }
