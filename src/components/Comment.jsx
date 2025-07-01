@@ -47,7 +47,7 @@ const Comment = ({ comment, onDelete, onUpdate }) => {
   };
 
   return (
-    <div className="card mb-3 shadow-sm">
+    <div className="card mb-3 shadow-sm w-100">
       <div className="card-body d-flex flex-column">
         {isEditing ? (
           <input

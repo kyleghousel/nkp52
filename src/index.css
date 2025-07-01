@@ -17,21 +17,40 @@ code {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin: 1rem;
+}
+
+.niharchives-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #000000;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #09f;
+  animation: glowPulse 2.5s ease-in-out infinite;
+  margin: 2rem 0;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #09f;
+  }
+  50% {
+    text-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 45px #09f;
+  }
+  100% {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #09f;
+  }
 }
 
 #navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  width: 25%;
-  position: relative;
-  z-index: 999;
-}
-
-.middle {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -52,8 +71,15 @@ code {
   background-color: #ddd;
 }
 
+@media (max-width: 576px) {
+  .nav-link {
+    padding: 1rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
 #nihead {
-  width: 70em;
+  width: 60vh;
   animation: spin 7s linear infinite;
   display: block;
   margin: 0 auto;
@@ -93,6 +119,10 @@ code {
   justify-content: space-between;
 }
 
+.soundCard:hover {
+  transform: scale(1.02);
+}
+
 .card:active {
   transform: scale(0.97);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -105,10 +135,14 @@ code {
 #car-content {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 2em;
+  flex-direction: row; /* default for larger screens */
+  gap: 2rem; /* optional spacing between items */
 }
 
 #car-container {
-  width: 70%;
+  padding: 2em;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,4 +153,65 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  #car-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #car-container, #comment-list {
+    width: 80%;
+  }
+}
+
+.comment-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+}
+
+#form-container {
+  margin: 1.4em;
+}
+
+.responsive-comment-scroll {
+  max-height: 60vh;
+  padding-right: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .responsive-comment-scroll {
+    max-height: 30vh;
+  }
+  #nihead {
+    max-width: 50vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-comment-scroll {
+    max-height: 25vh;
+  }
+
+  #nihead {
+    max-width: 45vh;
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(3);
+  }
+}
+
+.zoom-in {
+  animation: slowZoom 60s ease-in-out forwards;
+  transform-origin: center center;
 }

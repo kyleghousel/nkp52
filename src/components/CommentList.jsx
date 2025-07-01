@@ -1,16 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import AddCommentForm from './AddCommentForm'
 import Comment from './Comment'
 
-const CommentList = ({ comments, onDelete, onUpdate }) => {
+const CommentList = () => {
+
+  const [comments, setComments] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3001/comments')
+      .then(res=>res.json())
+      .then(setComments)
+  }, [])
+
+  const handleAddComment = (newComment) => {
+    setComments([...comments, newComment])
+  }
+
+  const handleDeleteComment = (newCommentId) => {
+    setComments(comments.filter(comment => comment.id !== newCommentId))
+  }
+
+  const handleUpdate = (updatedComment) => {
+    setComments((prev) =>
+      prev.map((comment) => (comment.id === updatedComment.id ? updatedComment : comment))
+    );
+  };
 
   const renderComments = comments.map((comment) => (
-    <Comment key={comment.id} comment={comment} onDelete={onDelete} onUpdate={onUpdate} />
+    <Comment key={comment.id} comment={comment} onDelete={handleDeleteComment} onUpdate={handleUpdate} />
   ))
 
   return (
-    <div id='comment-list container mt-4'>
+    <div className='d-flex flex-column align-items-center w-30 mx-2'>
       <h2>Hype For Nihar's Car</h2>
-      {renderComments}
+      <AddCommentForm onNewComment={handleAddComment} />
+      <div
+        className="w-100 overflow-auto responsive-comment-scroll"
+      >
+        {renderComments}
+      </div>
     </div>
   )
 }

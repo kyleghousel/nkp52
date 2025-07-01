@@ -31,11 +31,35 @@ const AddCommentForm = ({ onNewComment }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type='text' name='comment' placeholder='Type your comment...' value={formData.comment} onChange={handleChange} />
-      <input type='text' name='user' placeholder='Type your name...' value={formData.user} onChange={handleChange} />
-      <button type='submit' className="btn btn-primary">Add Comment</button>
-    </form>
+    <div className='container-sm' id='form-container'>
+      <form className='row g-2 align-items-end justify-content-center' onSubmit={handleSubmit}>
+        <div className="col-md-5">
+          <label className="form-label">Comment</label>
+          <input
+            type='text'
+            name='comment'
+            className='form-control'
+            placeholder='Type your comment...'
+            value={formData.comment}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-md-3">
+          <label className="form-label">Name</label>
+          <input
+            type='text'
+            name='user'
+            className='form-control'
+            placeholder='Type your name...'
+            value={formData.user}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-md-2">
+          <button type='submit' className="btn btn-primary w-100 fs-7">Add</button>
+        </div>
+      </form>
+    </div>
   )
 }
 
