@@ -19,7 +19,7 @@ const Soundboard = () => {
   const handleUpdate = (updatedSound) => {
     setSounds((prev) =>
       prev.map((sound) => (sound.id === updatedSound.id ? updatedSound : sound))
-    );
+    )
   }
 
   return (

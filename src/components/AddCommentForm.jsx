@@ -24,8 +24,8 @@ const AddCommentForm = ({ onNewComment }) => {
     })
       .then(res => res.json())
       .then(newComment => {
-        onNewComment(newComment);
-        setFormData({ comment: '', user: '' });
+        onNewComment(newComment)
+        setFormData({ comment: '', user: '' })
       })
       .catch(error => alert(error))
   }

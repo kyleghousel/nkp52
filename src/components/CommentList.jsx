@@ -23,8 +23,8 @@ const CommentList = () => {
   const handleUpdate = (updatedComment) => {
     setComments((prev) =>
       prev.map((comment) => (comment.id === updatedComment.id ? updatedComment : comment))
-    );
-  };
+    )
+  }
 
   const renderComments = comments.map((comment) => (
     <Comment key={comment.id} comment={comment} onDelete={handleDeleteComment} onUpdate={handleUpdate} />

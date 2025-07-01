@@ -5,9 +5,9 @@ const SoundCard = ({ onUpdate, sound }) => {
   const { audio, clicks, id, name, image } = sound
 
   const playSound = () => {
-    const soundPath = `${process.env.PUBLIC_URL}${audio}`;
-    const audioPlayer = new Audio(soundPath);
-    audioPlayer.play();
+    const soundPath = `${process.env.PUBLIC_URL}${audio}`
+    const audioPlayer = new Audio(soundPath)
+    audioPlayer.play()
   }
 
   const updateClicks = () => {
@@ -17,11 +17,11 @@ const SoundCard = ({ onUpdate, sound }) => {
         body: JSON.stringify({ clicks: Number(clicks) + 1 }),
       })
         .then((res) => {
-          if (!res.ok) throw new Error("Edit failed");
-          return res.json();
+          if (!res.ok) throw new Error("Edit failed")
+          return res.json()
         })
         .then(updatedSound => onUpdate(updatedSound))
-        .catch((err) => console.error(err));
+        .catch((err) => console.error(err))
   }
 
   const handleClick =  () => {
