@@ -2,87 +2,115 @@
   "sounds": [
     {
       "id": "1",
-      "name": "Emotional Damage",
-      "image": "https://ih1.redbubble.net/image.3180036768.2143/raf,360x360,075,t,fafafa:ca443f4786.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 27
+      "name": "Cooked",
+      "image": "/imgs/cooked.jpg",
+      "audio": "/sounds/cooked.m4a",
+      "clicks": 32
     },
     {
       "id": "2",
-      "name": "3motional Damage",
-      "image": "https://ih1.redbubble.net/image.5138873985.1903/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 8
+      "name": "Type Shi",
+      "image": "/imgs/typeshi.png",
+      "audio": "/sounds/typeshi.m4a",
+      "clicks": 17
     },
     {
       "id": "3",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 29
+      "name": "Ayo",
+      "image": "/imgs/ayo.jpg",
+      "audio": "/sounds/ayo.m4a",
+      "clicks": 36
     },
     {
       "id": "4",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 0
+      "name": "Bet",
+      "image": "/imgs/bet.png",
+      "audio": "/sounds/bet.m4a",
+      "clicks": 3
     },
     {
       "id": "5",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 7
+      "name": "Big Dog",
+      "image": "/imgs/bigdog.png",
+      "audio": "/sounds/bigdog.m4a",
+      "clicks": 10
     },
     {
       "id": "6",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 8
+      "name": "Boomer",
+      "image": "/imgs/boomer.png",
+      "audio": "/sounds/boomer.m4a",
+      "clicks": 13
     },
     {
       "id": "7",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 7
+      "name": "Bussin",
+      "image": "/imgs/bussin.png",
+      "audio": "/sounds/bussin.m4a",
+      "clicks": 9
     },
     {
       "id": "8",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 0
+      "name": "Cap",
+      "image": "/imgs/cap.webp",
+      "audio": "/sounds/cap.m4a",
+      "clicks": 4
     },
     {
       "id": "9",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 0
+      "name": "GGs",
+      "image": "/imgs/gg.jpg",
+      "audio": "/sounds/ggs.m4a",
+      "clicks": 2
     },
     {
       "id": "10",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 0
+      "name": "Touch Grass",
+      "image": "/imgs/touchgrass.jpg",
+      "audio": "/sounds/touchgrass.m4a",
+      "clicks": 4
     },
     {
       "id": "11",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 52
+      "name": "Low Key",
+      "image": "/imgs/lowkey.png",
+      "audio": "/sounds/lowkey.m4a",
+      "clicks": 56
     },
     {
       "id": "12",
-      "name": "Emotional Damage",
-      "image": "https://i.redd.it/xzn41f3d6qfb1.jpg",
-      "audio": "/sounds/EmotionalDamage.mp3",
-      "clicks": 3
+      "name": "Mid",
+      "image": "/imgs/mid.png",
+      "audio": "/sounds/mid.m4a",
+      "clicks": 7
+    },
+    {
+      "id": "13",
+      "name": "Pause",
+      "image": "/imgs/pause.png",
+      "audio": "/sounds/pause.m4a",
+      "clicks": 2
+    },
+    {
+      "id": "14",
+      "name": "Receipts",
+      "image": "/imgs/receipts.png",
+      "audio": "/sounds/receipts.m4a",
+      "clicks": 5
+    },
+    {
+      "id": "15",
+      "name": "Crazy",
+      "image": "/imgs/thatscrazy.png",
+      "audio": "/sounds/thatscrazy.m4a",
+      "clicks": 6
+    },
+    {
+      "id": "16",
+      "name": "Tilted",
+      "image": "/imgs/tilted.jpg",
+      "audio": "/sounds/tilted.m4a",
+      "clicks": 4
     }
   ],
   "comments": [

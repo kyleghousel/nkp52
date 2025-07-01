@@ -36,17 +36,3 @@ Details: Render each comment with Edit and Delete buttons. Clicking Edit lets yo
 
 User story: As a user, I want to sort or filter sound clips by mood or keyword to find the right Nihar reaction.
 Details: Add dropdown or checkbox UI to sort alphabetically or filter by tag/category. Update displayed list based on user selection.
-
----
-
-## Stretch Stories
-
-### Fetch data about Nihar's car from a Car API
-
-User story: As a user, I want to learn detailed specs about Nihar’s car via real-time API data.
-Details: Use a public car-related API (or a mock response if needed). Fetch based on make/model. Display HP, trim, etc.
-
-### Make Car Page interactive with Nihar's car data
-
-User story: As a user, I want to interact with Nihar’s car info in a fun way (like toggling fun facts).
-Details: Add buttons to toggle specs, a quiz, or even an animated "rev engine" interaction with sound and CSS.

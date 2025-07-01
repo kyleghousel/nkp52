@@ -148,6 +148,39 @@ code {
   align-items: center;
 }
 
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 60rem;
+  max-height: 60rem;
+  max-width: 60rem;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+  z-index: 5;
+}
+
 #comment-list {
   width: 30%;
   display: flex;
@@ -204,7 +237,7 @@ code {
 
 @keyframes slowZoom {
   from {
-    transform: scale(1);
+    transform: scale(.75);
   }
   to {
     transform: scale(3);
@@ -212,6 +245,6 @@ code {
 }
 
 .zoom-in {
-  animation: slowZoom 60s ease-in-out forwards;
+  animation: slowZoom 120s ease-in-out forwards;
   transform-origin: center center;
 }

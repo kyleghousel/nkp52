@@ -6,6 +6,10 @@ const Nicar = () => {
   const audio2Ref = useRef(null);
 
   useEffect(() => {
+    alert('Oh no! You found Nicar. You have been cursed!')
+  }, [])
+
+  useEffect(() => {
     const sound1 = new Audio('/sounds/choir.wav')
     const sound2 = new Audio('/sounds/rev.wav')
 
@@ -31,7 +35,6 @@ const Nicar = () => {
       <Header />
       <div className='container m-0-auto d-flex flex-column justify-content-center align-items-center' style={{ height: '80vh' }}>
         <img src='./imgs/NiCar.png' alt='vroom' className='img-fluid zoom-in' />
-        <h4>Oh no! You found Nicar. You have been cursed!</h4>
       </div>
     </>
   );
