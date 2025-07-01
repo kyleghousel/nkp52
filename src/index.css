@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1rem;
+}
+
+.niharchives-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #000000;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #09f;
+  animation: glowPulse 2.5s ease-in-out infinite;
+  margin: 2rem 0;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #09f;
+  }
+  50% {
+    text-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 45px #09f;
+  }
+  100% {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #09f;
+  }
+}
+
+#navigation {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  padding: 3.5rem 3rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+@media (max-width: 576px) {
+  .nav-link {
+    padding: 1rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+#nihead {
+  width: 60vh;
+  animation: spin 7s linear infinite;
+  display: block;
+  margin: 0 auto;
+  transform-origin: center center;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#sort-select {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.soundCard img {
+  height: 12em;
+  width: 100%;
+  object-fit: cover;
+}
+
+.soundCard {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.soundCard:hover {
+  transform: scale(1.02);
+}
+
+.card:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.soundCard .card-body {
+  margin-top: auto;
+}
+
+#car-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+  flex-direction: row; /* default for larger screens */
+  gap: 2rem; /* optional spacing between items */
+}
+
+#car-container {
+  padding: 2em;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 60rem;
+  max-height: 60rem;
+  max-width: 60rem;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-indicators {
+  z-index: 5;
+}
+
+#comment-list {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  #car-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #car-container, #comment-list {
+    width: 80%;
+  }
+}
+
+.comment-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+}
+
+#form-container {
+  margin: 1.4em;
+}
+
+.responsive-comment-scroll {
+  max-height: 60vh;
+  padding-right: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .responsive-comment-scroll {
+    max-height: 30vh;
+  }
+  #nihead {
+    max-width: 50vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-comment-scroll {
+    max-height: 25vh;
+  }
+
+  #nihead {
+    max-width: 45vh;
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(.75);
+  }
+  to {
+    transform: scale(3);
+  }
+}
+
+.zoom-in {
+  animation: slowZoom 90s ease-in-out forwards;
+  transform-origin: center center;
+}
