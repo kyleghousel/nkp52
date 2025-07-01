@@ -7,7 +7,7 @@ const Soundboard = () => {
   const [sort, setSort] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3001/sounds/')
+    fetch('https://nkp52-backend.onrender.com/sounds')
       .then(res=>res.json())
       .then(setSounds)
   }, [])

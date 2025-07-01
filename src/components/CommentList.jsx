@@ -7,7 +7,7 @@ const CommentList = () => {
   const [comments, setComments] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3001/comments')
+    fetch('https://nkp52-backend.onrender.com/comments')
       .then(res=>res.json())
       .then(setComments)
   }, [])
