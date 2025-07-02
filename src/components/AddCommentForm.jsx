@@ -20,7 +20,7 @@ const AddCommentForm = ({ onNewComment }) => {
       return
     }
 
-    fetch('http://localhost:3001/comments/', {
+    fetch('https://nkp52-backend.onrender.com/comments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

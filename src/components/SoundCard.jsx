@@ -11,7 +11,7 @@ const SoundCard = ({ onUpdate, sound }) => {
   }
 
   const updateClicks = () => {
-    fetch('http://localhost:3001/sounds/'+id, {
+    fetch('https://nkp52-backend.onrender.com/sounds/'+id, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ clicks: Number(clicks) + 1 }),

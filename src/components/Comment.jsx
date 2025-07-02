@@ -6,7 +6,7 @@ const Comment = ({ comment, onDelete, onUpdate }) => {
 
   const finishEditing = () => {
     if (editedComment !== comment.comment) {
-      fetch(`http://localhost:3001/comments/${comment.id}`, {
+      fetch(`https://nkp52-backend.onrender.com/comments/${comment.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ comment: editedComment }),
@@ -33,7 +33,7 @@ const Comment = ({ comment, onDelete, onUpdate }) => {
   }
 
   const handleDelete = () => {
-    fetch(`http://localhost:3001/comments/${comment.id}`, {
+    fetch(`https://nkp52-backend.onrender.com/comments/${comment.id}`, {
       method: 'DELETE',
     })
       .then((res) => {
