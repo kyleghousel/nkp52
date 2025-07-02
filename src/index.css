@@ -136,8 +136,8 @@ code {
   display: flex;
   justify-content: space-evenly;
   margin-top: 2em;
-  flex-direction: row; /* default for larger screens */
-  gap: 2rem; /* optional spacing between items */
+  flex-direction: row;
+  gap: 2rem;
 }
 
 #car-container {
@@ -181,13 +181,6 @@ code {
   z-index: 5;
 }
 
-#comment-list {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @media (max-width: 768px) {
   #car-content {
     flex-direction: column;
@@ -220,19 +213,49 @@ code {
   .responsive-comment-scroll {
     max-height: 30vh;
   }
+
   #nihead {
     max-width: 50vh;
   }
+
+  .carousel-inner {
+    height: 50% !important;
+  }
+
+  #comment-list {
+    width: 80%;
+    height: 100%;
+  }
+
 }
 
 @media (max-width: 576px) {
   .responsive-comment-scroll {
-    max-height: 25vh;
+    max-height: 30vh;
   }
 
   #nihead {
     max-width: 45vh;
   }
+
+  #car-content {
+    margin-top: .5rem;
+  }
+
+  .carousel-inner {
+    height: 50% !important;
+  }
+
+  .carousel-item img {
+    height: 50% !important;
+    object-fit: contain;
+  }
+
+  .form-select {
+    font-size: smaller !important;
+    padding: .5rem 1rem !important;
+  }
+
 }
 
 @keyframes slowZoom {
@@ -245,6 +268,6 @@ code {
 }
 
 .zoom-in {
-  animation: slowZoom 90s ease-in-out forwards;
+  animation: slowZoom 30s ease-in-out forwards;
   transform-origin: center center;
 }

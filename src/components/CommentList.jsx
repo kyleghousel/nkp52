@@ -31,11 +31,11 @@ const CommentList = () => {
   ))
 
   return (
-    <div className='d-flex flex-column align-items-center w-30 mx-2'>
+    <div className='d-flex flex-column align-items-center w-30 mx-2' id='comment-list'>
       <h2>Hype For Nihar's Car</h2>
       <AddCommentForm onNewComment={handleAddComment} />
       <div
-        className="w-100 overflow-auto responsive-comment-scroll"
+        className='w-100 overflow-auto responsive-comment-scroll'
       >
         {renderComments}
       </div>

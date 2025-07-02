@@ -6,7 +6,7 @@ const Nicar = () => {
   const audio2Ref = useRef(null)
 
   useEffect(() => {
-    alert('Oh no! You found Nicar. You have been cursed!!!')
+    alert(`Oh no! You have awakened Nicar.\n Don't look him in the eyes!!!`)
   }, [])
 
   useEffect(() => {

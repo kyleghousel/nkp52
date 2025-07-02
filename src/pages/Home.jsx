@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
-import "../index.css"
+import '../index.css'
 
 const Home = () => {
   const [quote, setQuote] = useState('')
@@ -20,10 +20,10 @@ const Home = () => {
       <Header />
       <main className='container text-center d-flex flex-column justify-content-evenly' style={{ height: '80vh' }}>
         <h3>A fan page for Nihar Patel.</h3>
-        <img src="/imgs/NiharHead.png" alt="Nihar Headshot" id="nihead" />
+        <img src='/imgs/NiharHead.png' alt='Nihar Headshot' id='nihead' />
         {quote
-          ? <blockquote className="mt-4 fst-italic">"{quote}" - Nihar Patel</blockquote>
-          : <blockquote className="mt-4 fst-italic">"React is CRAZY!"</blockquote>
+          ? <blockquote className='mt-4 fst-italic'>'{quote}' - Nihar Patel</blockquote>
+          : <blockquote className='mt-4 fst-italic'>'React is CRAZY!'</blockquote>
         }
       </main>
     </div>

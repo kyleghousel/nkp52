@@ -12,12 +12,12 @@ const SoundCard = ({ onUpdate, sound }) => {
 
   const updateClicks = () => {
     fetch('http://localhost:3001/sounds/'+id, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ clicks: Number(clicks) + 1 }),
       })
         .then((res) => {
-          if (!res.ok) throw new Error("Edit failed")
+          if (!res.ok) throw new Error('Edit failed')
           return res.json()
         })
         .then(updatedSound => onUpdate(updatedSound))
@@ -30,9 +30,9 @@ const SoundCard = ({ onUpdate, sound }) => {
   }
 
   return (
-    <div id={id} className="card h-100 soundCard" onClick={handleClick}>
+    <div id={id} className='card h-100 soundCard' onClick={handleClick}>
       <img src={image} alt={name} />
-      <h4 className="card-body text-center">{name}</h4>
+      <h4 className='card-body text-center'>{name}</h4>
     </div>
   )
 }

@@ -15,10 +15,15 @@ const AddCommentForm = ({ onNewComment }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    if (!formData.comment.trim() || !formData.user.trim()) {
+      alert('Please fill out both the comment and name fields.')
+      return
+    }
+
     fetch('http://localhost:3001/comments/', {
       method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     })
@@ -33,8 +38,8 @@ const AddCommentForm = ({ onNewComment }) => {
   return (
     <div className='container-sm' id='form-container'>
       <form className='row g-2 align-items-end justify-content-center' onSubmit={handleSubmit}>
-        <div className="col-md-5">
-          <label className="form-label">Comment</label>
+        <div className='col-md-5'>
+          <label className='form-label'>Comment</label>
           <input
             type='text'
             name='comment'
@@ -44,8 +49,8 @@ const AddCommentForm = ({ onNewComment }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="col-md-3">
-          <label className="form-label">Name</label>
+        <div className='col-md-3'>
+          <label className='form-label'>Name</label>
           <input
             type='text'
             name='user'
@@ -55,8 +60,8 @@ const AddCommentForm = ({ onNewComment }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="col-md-2">
-          <button type='submit' className="btn btn-primary w-100 fs-7">Add</button>
+        <div className='col-md-2'>
+          <button type='submit' className='btn btn-primary w-100 fs-7'>Add</button>
         </div>
       </form>
     </div>

@@ -25,7 +25,7 @@ const Soundboard = () => {
   return (
     <div>
       <Header />
-      <div className="container mt-4">
+      <div className='container mt-4'>
         <h2 className='text-center mb-4'>Nihar Soundboard</h2>
         <select className='form-select' id='sort-select' onChange={handleChangeSort}>
           <option selected value=''>Sort by</option>
