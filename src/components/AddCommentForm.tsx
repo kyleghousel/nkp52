@@ -1,18 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-const AddCommentForm = ({ onNewComment }) => {
+type Comment = {
+  comment: string;
+  user: string;
+};
+
+type AddCommentFormProps = {
+  onNewComment: (newComment: Comment) => void;
+};
+
+const AddCommentForm = ({ onNewComment }: AddCommentFormProps) => {
   const [formData, setFormData] = useState({
     comment: '',
     user: '',
   })
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target
 
     setFormData(prev => ({...prev, [name]: value}))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
 
     if (!formData.comment.trim() || !formData.user.trim()) {
