@@ -1,6 +1,19 @@
 import React, { useState } from 'react'
 
-const Comment = ({ comment, onDelete, onUpdate }) => {
+type CommentData = {
+  id: number;
+  comment: string;
+  user: string;
+};
+
+type CommentProps = {
+  comment: CommentData,
+  onDelete: (id: number) => void
+  onUpdate: (updated: CommentData) => void;
+};
+
+
+const Comment = ({ comment, onDelete, onUpdate }: CommentProps) => {
   const [isEditing, setIsEditing] = useState(false)
   const [editedComment, setEditedComment] = useState(comment.comment)
 
@@ -13,15 +26,15 @@ const Comment = ({ comment, onDelete, onUpdate }) => {
       })
         .then((res) => {
           if (!res.ok) throw new Error('Edit failed')
-          return res.json()
+          return res.json() as Promise<CommentData>
         })
-        .then(updated => onUpdate(updated))
+        .then((updated: CommentData) => onUpdate(updated))
         .catch((err) => console.error(err))
     }
     setIsEditing(false)
   }
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault()
       finishEditing()
@@ -53,7 +66,7 @@ const Comment = ({ comment, onDelete, onUpdate }) => {
           <input
             value={editedComment}
             className='form-control mb-2'
-            onChange={(e) => setEditedComment(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEditedComment(e.target.value)}
             onBlur={finishEditing}
             onKeyDown={handleKeyDown}
             autoFocus
