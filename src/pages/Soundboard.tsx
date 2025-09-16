@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import SoundList from '../components/SoundList'
-
-interface SoundData {
-  id: string,
-  clicks: number,
-  name: string,
-  image: string,
-  audio: string,
-}
+import type { SoundData } from "../types"
 
 const Soundboard = () => {
   const [sounds, setSounds] = useState<SoundData[]>([])

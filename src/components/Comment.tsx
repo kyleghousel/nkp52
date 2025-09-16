@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
-
-type CommentData = {
-  id: number;
-  comment: string;
-  user: string;
-};
+import type { CommentData } from "../types"
 
 type CommentProps = {
   comment: CommentData,

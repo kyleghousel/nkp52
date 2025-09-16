@@ -1,10 +1,4 @@
-type SoundData = {
-  id: string,
-  name: string,
-  image: string,
-  clicks: number,
-  audio: string,
-};
+import type { SoundData } from "../types"
 
 type SoundProps = {
   sound: SoundData,

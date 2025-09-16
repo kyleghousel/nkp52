@@ -1,14 +1,5 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
-
-type CommentData = {
-  id: number;
-  comment: string;
-  user: string;
-};
-
-type AddCommentFormProps = {
-  onNewComment: (newComment: CommentData) => void;
-};
+import type { AddCommentFormProps } from "../types"
 
 const AddCommentForm = ({ onNewComment }: AddCommentFormProps) => {
   const [formData, setFormData] = useState({

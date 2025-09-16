@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 import AddCommentForm from './AddCommentForm'
 import Comment from './Comment'
-
-type CommentData = {
-  id: number;
-  comment: string;
-  user: string;
-};
+import type { CommentData } from "../types"
 
 const CommentList = () => {
 
