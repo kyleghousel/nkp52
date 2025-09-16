@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import CommentList from '../components/CommentList'
 import Header from '../components/Header'
 
