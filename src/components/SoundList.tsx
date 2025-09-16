@@ -1,7 +1,20 @@
-import React from 'react'
 import SoundCard from './SoundCard'
 
-const SoundList = ({ onUpdate, sort, sounds }) => {
+interface SoundData {
+  id: string,
+  clicks: number,
+  name: string,
+  image: string,
+  audio: string,
+}
+
+interface SoundListProps {
+  onUpdate: (updated: SoundData) => void;
+  sort: string,
+  sounds: SoundData[]
+}
+
+const SoundList = ({ onUpdate, sort, sounds }: SoundListProps) => {
 
   const sortSounds = [...sounds].sort((a,b) => {
     switch (sort) {
