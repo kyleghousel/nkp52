@@ -1,26 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddCommentForm from './AddCommentForm'
 import Comment from './Comment'
 
+type CommentData = {
+  id: number;
+  comment: string;
+  user: string;
+};
+
 const CommentList = () => {
 
-  const [comments, setComments] = useState([])
+  const [comments, setComments] = useState<CommentData[]>([])
 
   useEffect(() => {
     fetch('https://nkp52-backend.onrender.com/comments')
-      .then(res=>res.json())
+      .then(res=>res.json() as Promise<CommentData[]>)
       .then(setComments)
   }, [])
 
-  const handleAddComment = (newComment) => {
+  const handleAddComment = (newComment: CommentData) => {
     setComments([...comments, newComment])
   }
 
-  const handleDeleteComment = (newCommentId) => {
+  const handleDeleteComment = (newCommentId: number) => {
     setComments(comments.filter(comment => comment.id !== newCommentId))
   }
 
-  const handleUpdate = (updatedComment) => {
+  const handleUpdate = (updatedComment: CommentData) => {
     setComments((prev) =>
       prev.map((comment) => (comment.id === updatedComment.id ? updatedComment : comment))
     )
