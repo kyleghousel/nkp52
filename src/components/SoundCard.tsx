@@ -1,6 +1,17 @@
-import React from 'react'
+type SoundData = {
+  id: string,
+  name: string,
+  image: string,
+  clicks: number,
+  audio: string,
+};
 
-const SoundCard = ({ onUpdate, sound }) => {
+type SoundProps = {
+  sound: SoundData,
+  onUpdate: (updated: SoundData) => void;
+};
+
+const SoundCard = ({ onUpdate, sound }: SoundProps) => {
 
   const { audio, clicks, id, name, image } = sound
 
@@ -18,7 +29,7 @@ const SoundCard = ({ onUpdate, sound }) => {
       })
         .then((res) => {
           if (!res.ok) throw new Error('Edit failed')
-          return res.json()
+          return res.json() as Promise<SoundData>
         })
         .then(updatedSound => onUpdate(updatedSound))
         .catch((err) => console.error(err))
