@@ -1,22 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 import SoundList from '../components/SoundList'
 
+interface SoundData {
+  id: string,
+  clicks: number,
+  name: string,
+  image: string,
+  audio: string,
+}
+
 const Soundboard = () => {
-  const [sounds, setSounds] = useState([])
+  const [sounds, setSounds] = useState<SoundData[]>([])
   const [sort, setSort] = useState('')
 
   useEffect(() => {
     fetch('https://nkp52-backend.onrender.com/sounds')
-      .then(res=>res.json())
+      .then(res=>res.json() as Promise<SoundData[]>)
       .then(setSounds)
   }, [])
 
-  const handleChangeSort = (e) => {
+  const handleChangeSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSort(e.target.value)
   }
 
-  const handleUpdate = (updatedSound) => {
+  const handleUpdate = (updatedSound: SoundData) => {
     setSounds((prev) =>
       prev.map((sound) => (sound.id === updatedSound.id ? updatedSound : sound))
     )
