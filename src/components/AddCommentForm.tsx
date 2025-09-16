@@ -1,12 +1,13 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 
-type Comment = {
+type CommentData = {
+  id: number;
   comment: string;
   user: string;
 };
 
 type AddCommentFormProps = {
-  onNewComment: (newComment: Comment) => void;
+  onNewComment: (newComment: CommentData) => void;
 };
 
 const AddCommentForm = ({ onNewComment }: AddCommentFormProps) => {
