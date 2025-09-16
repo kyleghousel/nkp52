@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Header from '../components/Header'
 
 const Nicar = () => {
-  const audio1Ref = useRef(null)
-  const audio2Ref = useRef(null)
+  const audio1Ref = useRef<HTMLAudioElement>(null)
+  const audio2Ref = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
     alert(`Oh no! You have awakened Nicar.\n Don't look him in the eyes!!!`)
