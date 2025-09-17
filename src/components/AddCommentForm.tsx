@@ -16,8 +16,8 @@ const AddCommentForm = ({ onNewComment }: AddCommentFormProps) => {
     mode: "onTouched"
   });
 
-  const { register, control, handleSubmit, formState, watch, getValues, setValue, reset, trigger } = form;
-  const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting, isSubmitted, isSubmitSuccessful, submitCount } = formState
+  const { register, handleSubmit, formState, reset } = form;
+  const { errors, isDirty, isValid, isSubmitting, } = formState
 
   const onSubmit = (data: FormValues) => {
     fetch('https://nkp52-backend.onrender.com/comments', {
