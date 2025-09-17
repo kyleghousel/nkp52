@@ -1,69 +1,83 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
 import type { AddCommentFormProps } from "../types"
+import { useForm } from 'react-hook-form';
+import type { FieldErrors } from 'react-hook-form';
+
+type FormValues = {
+  comment: string,
+  user: string
+};
 
 const AddCommentForm = ({ onNewComment }: AddCommentFormProps) => {
-  const [formData, setFormData] = useState({
-    comment: '',
-    user: '',
-  })
+  const form = useForm<FormValues>({
+    defaultValues: {
+      comment: "Wow! Cool car!",
+      user: "No one"
+    },
+    mode: "onTouched"
+  });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target
+  const { register, control, handleSubmit, formState, watch, getValues, setValue, reset, trigger } = form;
+  const { errors, touchedFields, dirtyFields, isDirty, isValid, isSubmitting, isSubmitted, isSubmitSuccessful, submitCount } = formState
 
-    setFormData(prev => ({...prev, [name]: value}))
-  }
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-
-    if (!formData.comment.trim() || !formData.user.trim()) {
-      alert('Please fill out both the comment and name fields.')
-      return
-    }
-
+  const onSubmit = (data: FormValues) => {
     fetch('https://nkp52-backend.onrender.com/comments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(data),
     })
       .then(res => res.json())
       .then(newComment => {
         onNewComment(newComment)
-        setFormData({ comment: '', user: '' })
+        reset()
       })
       .catch(error => alert(error))
   }
 
+  const onError = (errors: FieldErrors<FormValues>) => console.log(errors)
+
   return (
-    <div className='container-sm' id='form-container'>
-      <form className='row g-2 align-items-end justify-content-center' onSubmit={handleSubmit}>
-        <div className='col-md-5'>
+    <div className='container-sms' id='form-container'>
+      <form className='row w-100 g-2 flex-wrap' onSubmit={handleSubmit(onSubmit, onError)} noValidate>
+
+        <div className='col-12 col-md-5'>
           <label className='form-label'>Comment</label>
           <input
             type='text'
-            name='comment'
-            className='form-control'
-            placeholder='Type your comment...'
-            value={formData.comment}
-            onChange={handleChange}
-          />
+            id='comment'
+            {...register("comment", {
+            required: 'Comment is required'
+          })} />
+
+          <p className='error'>{errors.comment?.message}</p>
+
         </div>
-        <div className='col-md-3'>
+
+        <div className='col-12 col-md-4'>
           <label className='form-label'>Name</label>
           <input
             type='text'
-            name='user'
-            className='form-control'
-            placeholder='Type your name...'
-            value={formData.user}
-            onChange={handleChange}
-          />
+            id='user'
+            {...register("user", {
+            required: 'Name is required',
+            validate: {
+              notNihar: fieldValue => {
+                return (
+                  fieldValue !== "Nihar" || "Pause"
+                )
+              },
+            }
+            })} />
+
+          <p className='error'>{errors.user?.message}</p>
+
         </div>
-        <div className='col-md-2'>
-          <button type='submit' className='btn btn-primary w-100 fs-7'>Add</button>
+
+        <div className='col-auto ms-auto'>
+         <button type='submit' className='btn btn-primary w-100 fs-7' disabled={!isDirty || !isValid || isSubmitting}>Add</button>
         </div>
+
       </form>
     </div>
   )
